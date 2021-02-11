@@ -1,0 +1,51 @@
+{
+  "name": "dead-peach",
+  "version": "0.0.0",
+  "license": "MIT",
+  "publisher": "mvllow",
+  "engines": {
+    "vscode": "^1.22.0"
+  },
+  "repository": "mvllow/dead-peach",
+  "icon": "assets/icon.png",
+  "displayName": "Dead Peach",
+  "description": "Sweet and gloomy",
+  "categories": [
+    "Themes"
+  ],
+  "keywords": [
+    "minimal",
+    "aesthetic",
+    "pastel",
+    "classy",
+    "soft"
+  ],
+  "galleryBanner": {
+    "color": "#191724",
+    "theme": "dark"
+  },
+  "contributes": {
+    "themes": [
+      {
+        "label": "Dead Peach",
+        "uiTheme": "vs-dark",
+        "path": "themes/dead-peach-color-theme.json"
+      }
+    ]
+  },
+  "scripts": {
+    "build": "pinecone",
+    "watch": "pinecone watch",
+    "test": "npm run build && ava",
+    "release": "np --no-publish"
+  },
+  "devDependencies": {
+    "ava": "^3.15.0",
+    "pinecone-cli": "^1.6.0",
+    "prettier": "^2.2.1"
+  },
+  "prettier": {
+    "singleQuote": true,
+    "semi": false
+  }
+}

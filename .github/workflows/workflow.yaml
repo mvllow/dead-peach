@@ -1,0 +1,23 @@
+on:
+  workflow_dispatch:
+    inputs:
+      tags:
+        description: 'Publish current state'
+  push:
+    branches:
+      - main
+    paths:
+      - '**/*-color-theme.json'
+      - '**/*-icon-theme.json'
+
+name: Publish
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: lannonbr/vsce-action@master
+        with:
+          args: 'publish -p $VSCE_TOKEN'
+        env:
+          VSCE_TOKEN: ${{ secrets.PAT }}
